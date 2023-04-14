@@ -55,7 +55,7 @@ public class Main {
         }
     }
 
-    static char[][] setDisplayBoard(){
+    public static char[][] setDisplayBoard(){
         char board[][] = new char[9][5];
         for (int i = 0; i < 9; i++) {
             Arrays.fill(board[i], '?');
@@ -63,7 +63,7 @@ public class Main {
         return board;
     }
 
-    static OBJ[][] setBoard() {
+    public static OBJ[][] setBoard() {
         Random rand = new Random();
 
         OBJ[][] board = new OBJ[9][5];
@@ -73,16 +73,18 @@ public class Main {
                 int r = rand.nextInt(10);
                 if (r % 3 == 0) {
                     board[i][j] = new bomb();
+                    OBJ.setTotalbobms();
                 } else {
                     board[i][j] = new numbers();
                     OBJ.setTotalObs();
                 }
             }
         }
+        System.out.println(OBJ.getTotalbobms());
         return board;
     }
 
-    static void printBoard(char[][] board,char[] nums1,int i,int[] nums){
+    public  static void printBoard(char[][] board,char[] nums1,int i,int[] nums){
         System.out.print(" ");
         System.out.print(" ");
         for (var n:nums) {
