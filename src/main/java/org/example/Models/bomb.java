@@ -1,7 +1,14 @@
 package org.example.Models;
 
-public class bomb extends OBJ {
+public class bomb extends Tiles {
 
+    public int p1 = 0;
+    public int p2 = 0;
+
+   public bomb(int p1,int p2){
+        this.p1 = p1;
+        this.p2 = p2;
+    }
 
     @Override
     boolean Hit() {

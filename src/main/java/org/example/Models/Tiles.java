@@ -1,10 +1,10 @@
 package org.example.Models;
 
-public abstract class OBJ {
+public abstract class Tiles {
     int pos = 0;
     static private int totalObs = 0;
     static private int totalbobms = 0;
-    public OBJ(){
+    public Tiles(){
 
     }
 
@@ -16,8 +16,6 @@ public abstract class OBJ {
         totalObs++;
     }
 
-
-
     public static void removeOBJ(){
         totalObs --;
     }
@@ -27,7 +25,7 @@ public abstract class OBJ {
     }
 
     public static void setTotalbobms() {
-        OBJ.totalbobms ++;
+        Tiles.totalbobms ++;
     }
 
     abstract boolean Hit();
