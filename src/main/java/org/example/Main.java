@@ -21,6 +21,10 @@ public class Main {
         var board1  = setBoard();
         printBoard(board,chars1,i,nums);
 
+        RunGame(nums, chars1, i, board, board1);
+    }
+
+    public static void RunGame(int[] nums, char[] chars1, int i, char[][] board, OBJ[][] board1) {
         while(true) {
             String[] SplitInput = new String[0];
             try {
@@ -32,7 +36,7 @@ public class Main {
 
                 if (OBJ.getTotalObs() == 0) {
                     System.out.println("You Have won!!!!");
-                } else if (board[Integer.parseInt(SplitInput[0]) - 1][Integer.parseInt(SplitInput[1]) - 1] == '+') {
+                } else if (CheckInput(Integer.parseInt(SplitInput[0]) -1, Integer.parseInt(SplitInput[1]) -1 , board1 ,board)) {
                     System.out.println("Please Pick Another suggestion");
                     continue;
                 }
@@ -50,9 +54,18 @@ public class Main {
             } catch (Exception e) {
                 System.out.println("The Combo of: " + SplitInput[0] + " Does not exist try again" );
             }
-
-
         }
+    }
+
+    public static Boolean CheckInput(Integer Input1,Integer Input2,OBJ[][] board1,char[][] board){
+
+        if(board[Input1][Input2] == '+'){
+            return true;
+        }else{
+            return false;
+        }
+
+
     }
 
     public static char[][] setDisplayBoard(){
