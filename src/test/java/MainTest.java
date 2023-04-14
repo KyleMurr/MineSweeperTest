@@ -16,7 +16,7 @@ public class MainTest {
     public void TestDisplayBoard(){
         var board = Main.setDisplayBoard();
 
-        char board1[][] = new char[9][5];
+        char[][] board1 = new char[9][5];
         for (int i = 0; i < 9; i++) {
             Arrays.fill(board1[i], '?');
         }
