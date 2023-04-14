@@ -25,39 +25,6 @@ public class Main {
         board.setBoard();
     }
 
-    public static void RunGame(int[] nums, char[] chars1, int i, char[][] board, Tiles[][] board1) {
-//        while(true) {
-//            String[] SplitInput = new String[0];
-//            try {
-//                Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-//                System.out.println("What is your selection: ");
-//
-//                String Selection = myObj.nextLine();  // Read user input
-//                SplitInput = Selection.split("");
-//
-//                if (Tiiles.getTotalObs() == 0) {
-//                    System.out.println("You Have won!!!!");
-//                } else if (CheckInput(Integer.parseInt(SplitInput[0]) -1, Integer.parseInt(SplitInput[1]) -1 , board1 ,board)) {
-//                    System.out.println("Please Pick Another suggestion");
-//                    continue;
-//                }
-//
-//                if (board1[Integer.parseInt(SplitInput[0]) - 1][Integer.parseInt(SplitInput[1]) - 1] instanceof bomb) {
-//                    board[Integer.parseInt(SplitInput[0]) - 1][Integer.parseInt(SplitInput[1]) - 1] = 'X';
-//                    printBoard(board, chars1, i, nums);
-//                    System.out.println("Game Over");
-//                    break;
-//                } else {
-//                    board[Integer.parseInt(SplitInput[0]) - 1][Integer.parseInt(SplitInput[1]) - 1] = '+';
-//                    printBoard(board, chars1, i, nums);
-//                    Tiiles.removeOBJ();
-//                }
-//            } catch (Exception e) {
-//                System.out.println("The Combo of: " + SplitInput[0] + " Does not exist try again" );
-//            }
-//        }
-    }
-
 //    public static Boolean CheckInput(Integer Input1, Integer Input2, Tiiles[][] board1, char[][] board){
 //
 //        if(board[Input1][Input2] == '+'){
