@@ -22,7 +22,7 @@ public class Board {
         ArrayList<numbers> Nums = new ArrayList<>();
 
         Tiles[][] board = new Tiles[9][5];
-        char[] chars1 = new char[]{'A', 'B', 'C', 'D'};
+//        char[] chars1 = new char[]{'A', 'B', 'C', 'D'};
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 5; j++) {
                 int r = rand.nextInt(20);
