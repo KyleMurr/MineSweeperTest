@@ -43,12 +43,21 @@ public class Board {
         int[] nums = new int[]{1,2,3,4,5};
         int i = 0;
         System.out.print(" ");
-        System.out.print(" ");
+        System.out.print("");
         for (var n:nums) {
             System.out.print(n);
             System.out.print(" ");
         }
         System.out.println();
+
+        for (var bomb:bombsPos
+        ) {
+            for (var n: Nums
+            ) {
+                n.NextToBomb(bomb.p1,bomb.p2);
+            }
+        }
+
         for (var l:board
              ) {
             for (var m : l
@@ -62,22 +71,7 @@ public class Board {
 
         //Check if bomb hitting num
 
-        for (var bomb:bombsPos
-             ) {
-            for (var numbers: nums
-                 ) {
 
-            }
-        }
-
-        for (int j = 0; j < board.length ; j++) {
-            for (int k = 0; k < board[j].length ; k++) {
-                if(board[j][k] instanceof bomb){
-
-
-                }
-            }
-        }
 //        System.out.println(Tiles.getTotalbobms());
         return board;
     }
