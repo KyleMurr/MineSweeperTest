@@ -8,11 +8,11 @@ public class OBJtest {
     @Test
     public void TestOBJ (){
         Tiles object = new bomb();
-        Tiles.setTotalObs();
-        Tiles.setTotalObs();
-        Tiles.setTotalObs();
-        Tiles.setTotalObs();
-        Tiles.setTotalObs();
+        Tiles.setTotalNums();
+        Tiles.setTotalNums();
+        Tiles.setTotalNums();
+        Tiles.setTotalNums();
+        Tiles.setTotalNums();
 
         Assertions.assertEquals(5, Tiles.getTotalObs(),"Should Be 5 but is: " + Tiles.getTotalObs());
     }

@@ -1,7 +1,7 @@
 package org.example.Models;
 
 public class numbers extends Tiles {
-    int bombsHitting;
+    int bombsHitting = 0;
     int p1 = 0;
     int p2 = 0;
 
@@ -17,13 +17,58 @@ public class numbers extends Tiles {
     }
 
 
-    public void NextToBomb(int bombp1, int bombp2){
-        if(bombp1 - p1  == 1 && bombp2 == p2){
+    public Boolean NextToBomb(int Row, int Column){
+        //Checks If there is a bomb above or below
+        if(p2 == Column + 1 && Row == p1){
             bombsHitting++;
+            return true;
         }
-//        else if(bombp2 - p2 == 1){
-//            bombsHitting++;
-//        }
+
+        if(p2 == Column - 1 && Row == p1){
+            bombsHitting++;
+            return true;
+        }
+
+        //Checks if a bomb is to either side
+        if(Column == p2 && Row == p1 -1 ){
+            bombsHitting++;
+            return true;
+        }
+
+        if(Column == p2 && Row == p1 +1 ){
+            bombsHitting++;
+            return true;
+        }
+
+        //Check if a bomb is diagonal
+        if(p2 + 1 == Column ){
+
+            if(p1 + 1 == Row ){
+                bombsHitting++;
+                return true;
+            }
+
+            if(p1 - 1 == Row ){
+                bombsHitting++;
+                return true;
+            }
+
+        }
+
+        if(p2 - 1 == Column ){
+
+            if(p1 + 1 == Row ){
+                bombsHitting++;
+                return true;
+            }
+
+            if(p1 - 1 == Row ){
+                bombsHitting++;
+                return true;
+            }
+
+        }
+        return false;
     }
 
 
