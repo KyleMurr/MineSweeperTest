@@ -25,7 +25,7 @@ public class Board {
         Random rand = new Random();
         bombsPos = new ArrayList<>();
         Nums = new ArrayList<>();
-        Columns = 9;
+        Columns = 8;
         Tiles[][] board = new Tiles[9][9];
         for (int i = 0; i < 9; i++) {
             rows++;
