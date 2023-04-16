@@ -34,8 +34,8 @@ public class Game {
     public void ExposeNearBlanks(int p1, int p2) {
         //if Top,Bottom,Left,Right around the blank is blank Reveal those tiles.
         numbers charr = (numbers) gameBoard.Grid_ItemPos[p1][p2];
-        On Current = null;
         gameBoard.DisplayBoard[p1][p2] = '0';
+        Tiles.removeOBJ();
         if (p2 - 1 >= 0) {
             if (gameBoard.DisplayBoard[p1][p2 - 1] != '0') {
                 numbers topChar = (numbers) gameBoard.Grid_ItemPos[p1][p2 - 1];
@@ -63,27 +63,6 @@ public class Game {
             if(RightChar.bombsHitting == 0) ExposeNearBlanks(p1 + 1, p2 );
             }
         }
-
-//        var ColumnP = p2;
-//        var rowP = p1;
-////        for (var n:gameBoard.Nums
-////             ) {
-////            if (ColumnP +1 == n.p2 && rowP == n.p1 ) {
-////            numbers currentChar = (numbers) gameBoard.Grid_ItemPos[p1][p2 + 1];
-////            if(currentChar.bombsHitting == 0){
-////                gameBoard.DisplayBoard[p1][ColumnP] = '0';
-////            }
-////            ColumnP = n.p2;
-////
-////        }
-////        }
-//        numbers currentChar = (numbers) gameBoard.Grid_ItemPos[p1][p2 + 1];
-//        while(currentChar.bombsHitting == '0'){
-//
-//        }
-//        gameBoard.printBoard(gameBoard.DisplayBoard);
-
-
     }
 
 
@@ -107,7 +86,7 @@ public class Game {
         } else if (displayGrid[p1][p2] != '?' && !Flag) {
             System.out.println("This Tile has been Revealed or is a flag, Try another Co-ord");
         } else if (l[p1][p2] instanceof bomb && !Flag) {
-            System.out.println("GameOver!!!");
+            System.out.println("you hit a bomb GameOver!!!");
             System.exit(0);
         } else {
             numbers n = (numbers) l[p1][p2];
@@ -121,18 +100,15 @@ public class Game {
             }
         }
 
-        if (Tiles.getFlagOnBomb() == Tiles.getTotalnums()) {
-            System.out.println("You have Won Well Done !!!");
+        if (Tiles.getFlagOnBomb() == Tiles.getTotalBombNums()) {
+            System.out.println("You have Found All the bombs and won, Won Well Done !!!");
+            System.exit(0);
+        }else if(Tiles.getTotalObs() == 0) {
+            System.out.println("You have Found All the number and won, Well Done !!!");
             System.exit(0);
         }
 
+
         gameBoard.printBoard(gameBoard.DisplayBoard);
     }
-}
-
-enum On {
-    Left,
-    Right,
-    Up,
-    Down
 }

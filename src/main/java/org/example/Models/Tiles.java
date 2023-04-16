@@ -3,7 +3,7 @@ package org.example.Models;
 public abstract class Tiles {
     int pos = 0;
     static private int totalObs = 0;
-    static private int totalnums = 0;
+    static private int totalBombNums = 0;
 
     static private int FlagOnBomb = 0;
     public Tiles(){
@@ -22,12 +22,12 @@ public abstract class Tiles {
         totalObs --;
     }
 
-    public static int getTotalnums() {
-        return totalnums;
+    public static int getTotalBombNums() {
+        return totalBombNums;
     }
 
     public static void IncrementFlagOnBomb() {
-        Tiles.totalnums++;
+        Tiles.totalBombNums++;
     }
 
     public static int getFlagOnBomb() {

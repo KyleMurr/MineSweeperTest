@@ -25,13 +25,13 @@ public class Board {
         Random rand = new Random();
         bombsPos = new ArrayList<>();
         Nums = new ArrayList<>();
-        Columns = 5;
-        Tiles[][] board = new Tiles[9][5];
+        Columns = 9;
+        Tiles[][] board = new Tiles[9][9];
         for (int i = 0; i < 9; i++) {
             rows++;
-            for (int j = 0; j < 5; j++) {
+            for (int j = 0; j < 9; j++) {
                 int r = rand.nextInt(20);
-                if (i + j == 1) {
+                if (r % 6 ==0) {
                     var newB = new bomb(i, j);
                     board[i][j] = newB;
                     bombsPos.add(newB);
@@ -46,7 +46,7 @@ public class Board {
                 }
             }
         }
-        int[] nums = new int[]{1, 2, 3, 4, 5};
+        int[] nums = new int[]{1, 2, 3, 4, 5,6,7,8,9};
         int i = 0;
         System.out.print(" ");
         System.out.print("");
@@ -76,18 +76,12 @@ public class Board {
             System.out.println();
         }
 
-
-        for (var x:Nums
-             ) {
-            System.out.println(x.bombsHitting);
-        }
-
         return board;
     }
 
 
     public char[][] setDisplayBoard() {
-        char board[][] = new char[9][5];
+        char board[][] = new char[9][9];
         for (int i = 0; i < 9; i++) {
             Arrays.fill(board[i], '?');
         }
@@ -95,7 +89,7 @@ public class Board {
     }
 
     public void printBoard(char[][] board) {
-        int[] nums = new int[]{1, 2, 3, 4, 5};
+        int[] nums = new int[]{1, 2, 3, 4, 5,6,7,8,9};
         int i = 0;
         char[] chars1 = new char[]{'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 

@@ -10,6 +10,10 @@ public class bomb extends Tiles {
         this.p2 = p2;
     }
 
+    public bomb() {
+
+    }
+
     @Override
     boolean Hit() {
         return true;
